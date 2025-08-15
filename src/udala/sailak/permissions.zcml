@@ -1,0 +1,12 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="udala.sailak"
+    >
+
+  <!-- -*- extra stuff goes here -*- -->
+  <permission
+      id="udala.sailak.AddSaila"
+      title="udala.sailak: Add Saila"
+      />
+</configure>

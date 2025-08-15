@@ -1,0 +1,32 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="udala.sailak"
+    >
+
+  <!-- -*- extra stuff goes here -*- -->
+  <include package="plone.app.contentmenu" />
+
+  <browser:page
+      name="sailak_view"
+      for="plone.app.contenttypes.interfaces.IFolder"
+      class=".sailak_view.SailakView"
+      template="sailak_view.pt"
+      permission="zope2.View"
+      layer="udala.sailak.interfaces.IBrowserLayer"
+      menu="plone_displayviews"
+      title="Sailak"
+      />
+
+
+  <browser:page
+      name="view"
+      for="udala.sailak.content.saila.ISaila"
+      class=".saila_view.SailaView"
+      template="saila_view.pt"
+      permission="zope2.View"
+      layer="udala.sailak.interfaces.IBrowserLayer"
+      />
+
+</configure>

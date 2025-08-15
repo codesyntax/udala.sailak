@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="udala.sailak"
+>
+
+  <body>
+
+    <metal:custom_title fill-slot="content-title">
+      <h1 tal:replace="structure context/@@title"></h1>
+    </metal:custom_title>
+
+    <metal:custom_description fill-slot="content-description">
+      <p tal:replace="structure context/@@description"></p>
+    </metal:custom_description>
+
+    <metal:content-core fill-slot="content-core">
+      <metal:block define-macro="content-core">
+
+        <div class="row"
+             tal:define="
+               sailak view/sailak;
+             "
+             tal:condition="sailak"
+        >
+          <div class="col-md-3 col-sm-3 mb-4"
+               tal:repeat="element sailak"
+          >
+            <div class="iconcard border border-primary p-3 h-100 text-center d-flex flex-column position-relative">
+              <h2 class="mb-auto h5">
+                <a class="stretched-link"
+                   tal:content="element/Title"
+                   tal:attributes="
+                     href element/absolute_url;
+                   "
+                ></a>
+              </h2>
+              <img class="rounded-circle mx-auto my-2 bg-primary"
+                   tal:define="
+                     scale nocall:element/@@images;
+                   "
+                   tal:replace="structure python:scale.srcset(
+                  fieldname='sailaicon',
+                  sizes='',
+                  css_class='rounded-circle mx-auto my-2 bg-primary',
+                  alt=element.Title(),
+                  title=element.Title(),
+                )"
+                   tal:attributes="
+                     src element/image;
+                     title element/title;
+                     alt element/title;
+                     width element/image_width;
+                     height element/image_height;
+                   "
+              />
+            </div>
+          </div>
+        </div>
+
+      </metal:block>
+    </metal:content-core>
+  </body>
+
+</html>
