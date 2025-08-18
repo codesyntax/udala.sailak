@@ -7,7 +7,7 @@
   <property name="view_methods"
             purge="false"
   >
-    <element value="sailak_view" />
+    <element value="departments_view" />
   </property>
 
 </object>

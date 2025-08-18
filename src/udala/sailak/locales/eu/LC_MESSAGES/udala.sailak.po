@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-08-18 07:18+0000\n"
+"POT-Creation-Date: 2025-08-18 07:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,11 +42,6 @@ msgstr "Gehitu hemen sailaren informazio gehigarria. Adb.: arduradunaren izena, 
 msgid "Fill this in if you want to have a different title in the department listing (the title) and here (this one)"
 msgstr "Bete hau sailen zerrendan (izenburua) eta hemen (hau) izen desberdinak erabili nahi badituzu"
 
-#: udala/sailak/content/department.py:55
-#: udala/sailak/views/department_view.pt:58
-msgid "Hours"
-msgstr "Ordutegia"
-
 #: udala/sailak/content/department.py:15
 msgid "Name of social network"
 msgstr "Sare sozialaren izena"
@@ -58,6 +53,11 @@ msgstr "Eremuaren izena"
 #: udala/sailak/content/department.py:42
 msgid "Official name of the department"
 msgstr "Sailaren izen ofiziala"
+
+#: udala/sailak/content/department.py:55
+#: udala/sailak/views/department_view.pt:58
+msgid "Opening hours"
+msgstr "Ordutegia"
 
 #: udala/sailak/profiles.zcml:13
 msgid "Package to configure a new udala.sailak site"

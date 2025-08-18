@@ -11,8 +11,8 @@
   <browser:page
       name="departments_view"
       for="plone.app.contenttypes.interfaces.IFolder"
-      class=".department_view.DepartmentsView"
-      template="department_view.pt"
+      class=".departments_view.DepartmentsView"
+      template="departments_view.pt"
       permission="zope2.View"
       layer="udala.sailak.interfaces.IBrowserLayer"
       menu="plone_displayviews"

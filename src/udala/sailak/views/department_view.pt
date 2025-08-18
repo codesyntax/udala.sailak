@@ -49,13 +49,13 @@
             >
             </div>
 
-            <div id="schedule"
+            <div id="hours"
                  tal:define="
                    toc context/table_of_contents|nothing;
                  "
                  tal:condition="context/hours"
             >
-              <h2 i18n:translate="">Hours</h2>
+              <h2 i18n:translate="">Opening hours</h2>
               <div id="parent-fieldname-text-hours"
                    tal:content="structure python:context.hours.output_relative_to(view.context)"
                    tal:attributes="

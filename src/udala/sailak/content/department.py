@@ -22,8 +22,8 @@ class IExtraDataRowSchema(Interface):
     value = schema.TextLine(title=_("Value of the field"))
 
 
-class ISaila(model.Schema):
-    """Marker interface and Dexterity Python Schema for Saila"""
+class IDepartment(model.Schema):
+    """Marker interface and Dexterity Python Schema for Department"""
 
     # If you want, you can load a xml model created TTW here
     # and customize it in Python:
@@ -52,7 +52,7 @@ class ISaila(model.Schema):
         required=False,
     )
 
-    hours = RichText(title=_("Hours"), required=False)
+    hours = RichText(title=_("Opening hours"), required=False)
 
     widget(sociallinks=DataGridFieldFactory)
     sociallinks = schema.List(
@@ -99,6 +99,6 @@ class ISaila(model.Schema):
     )
 
 
-@implementer(ISaila)
-class Saila(Container):
-    """Content-type class for ISaila"""
+@implementer(IDepartment)
+class Department(Container):
+    """Content-type class for IDepartment"""
