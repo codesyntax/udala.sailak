@@ -16,7 +16,7 @@
       permission="zope2.View"
       layer="udala.sailak.interfaces.IBrowserLayer"
       menu="plone_displayviews"
-      title="Sailak"
+      title="Departments view"
       />
 
 

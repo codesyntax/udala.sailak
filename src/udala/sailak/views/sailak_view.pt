@@ -8,53 +8,43 @@
 
   <body>
 
-    <metal:custom_title fill-slot="content-title">
-      <h1 tal:replace="structure context/@@title"></h1>
-    </metal:custom_title>
-
-    <metal:custom_description fill-slot="content-description">
-      <p tal:replace="structure context/@@description"></p>
-    </metal:custom_description>
-
     <metal:content-core fill-slot="content-core">
       <metal:block define-macro="content-core">
 
         <div class="row"
              tal:define="
-               sailak view/sailak;
+               items context/@@contentlisting;
              "
-             tal:condition="sailak"
+             tal:condition="items"
         >
           <div class="col-md-3 col-sm-3 mb-4"
-               tal:repeat="element sailak"
+               tal:repeat="item items"
           >
-            <div class="iconcard border border-primary p-3 h-100 text-center d-flex flex-column position-relative">
+            <div class="iconcard border border-primary p-3 h-100 text-center d-flex flex-column position-relative"
+                 tal:define="
+                   department python:item.getObject();
+                 "
+            >
               <h2 class="mb-auto h5">
                 <a class="stretched-link"
-                   tal:content="element/Title"
+                   tal:content="department/Title"
                    tal:attributes="
-                     href element/absolute_url;
+                     href department/absolute_url;
                    "
                 ></a>
               </h2>
               <img class="rounded-circle mx-auto my-2 bg-primary"
                    tal:define="
-                     scale nocall:element/@@images;
+                     scale nocall:department/@@images;
                    "
+                   tal:condition="nocall:department/image"
                    tal:replace="structure python:scale.srcset(
                   fieldname='sailaicon',
                   sizes='',
                   css_class='rounded-circle mx-auto my-2 bg-primary',
-                  alt=element.Title(),
-                  title=element.Title(),
+                  alt=department.Title(),
+                  title=department.Title(),
                 )"
-                   tal:attributes="
-                     src element/image;
-                     title element/title;
-                     alt element/title;
-                     width element/image_width;
-                     height element/image_height;
-                   "
               />
             </div>
           </div>

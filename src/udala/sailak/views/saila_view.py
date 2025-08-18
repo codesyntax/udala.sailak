@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # from udala.sailak import _
 from Products.Five.browser import BrowserView
 from zope.interface import implementer
@@ -8,8 +6,9 @@ from zope.interface import Interface
 
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
+
 class ISailaView(Interface):
-    """ Marker Interface for ISailaView"""
+    """Marker Interface for ISailaView"""
 
 
 @implementer(ISailaView)
@@ -29,8 +28,10 @@ class SailaView(BrowserView):
         saila_dict = {}
 
         if self.context.bannerimage:
-                featured_scales = self.context.restrictedTraverse("@@images")
-                saila_dict["bannerimage"] = featured_scales.scale("bannerimage", width=850, height=220).url
+            featured_scales = self.context.restrictedTraverse("@@images")
+            saila_dict["bannerimage"] = featured_scales.scale(
+                "bannerimage", width=850, height=220
+            ).url
         else:
             saila_dict["bannerimage"] = ""
 

@@ -55,7 +55,7 @@
                  "
                  tal:condition="context/hours"
             >
-              <h2 i18n:translate="">Ordutegia</h2>
+              <h2 i18n:translate="">Hours</h2>
               <div id="parent-fieldname-text-hours"
                    tal:content="structure python:context.hours.output_relative_to(view.context)"
                    tal:attributes="
@@ -69,7 +69,7 @@
             <div id="extradata">
               <ul>
                 <li tal:repeat="link context/extradata">
-                  <strong tal:content="link/name">Ordutegia</strong>
+                  <strong tal:content="link/name">Name</strong>
                   <span class="value"
                         tal:content="link/value"
                   >Value</span>
