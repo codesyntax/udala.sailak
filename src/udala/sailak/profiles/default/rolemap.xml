@@ -3,7 +3,7 @@
   <permissions>
     <!-- -*- extra stuff goes here -*- -->
     <permission acquire="True"
-                name="udala.sailak: Add Saila"
+                name="udala.sailak: Add Department"
     >
       <role name="Manager" />
       <role name="Site Administrator" />

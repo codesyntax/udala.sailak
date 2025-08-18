@@ -2,12 +2,10 @@ from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield.registry import DictRow
 from plone.app.textfield import RichText
 from plone.autoform.directives import widget
-
 from plone.dexterity.content import Container
 from plone.namedfile import field as namedfile
 from plone.supermodel import model
 from udala.sailak import _
-
 from zope import schema
 from zope.interface import implementer
 from zope.interface import Interface
@@ -42,7 +40,10 @@ class ISaila(model.Schema):
 
     sectiontitle = schema.TextLine(
         title=_("Official name of the department"),
-        description=_('Fill this in if you want to have a different title in the department listing (the title) and here (this one)'),
+        description=_(
+            "Fill this in if you want to have a different title in the "
+            "department listing (the title) and here (this one)"
+        ),
         required=False,
     )
 
@@ -80,8 +81,10 @@ class ISaila(model.Schema):
     widget(extradata=DataGridFieldFactory)
     extradata = schema.List(
         title=_("Extra information"),
-        description=_("Field to add arbitrary extra information. Ex.: responsible name, "
-                      "telephone number, email, ..."),
+        description=_(
+            "Field to add arbitrary extra information. Ex.: responsible name, "
+            "telephone number, email, ..."
+        ),
         value_type=DictRow(title=_("Extra information"), schema=IExtraDataRowSchema),
         default=[
             {"name": "Arduraduna", "value": ""},
@@ -94,6 +97,7 @@ class ISaila(model.Schema):
         ],
         required=False,
     )
+
 
 @implementer(ISaila)
 class Saila(Container):

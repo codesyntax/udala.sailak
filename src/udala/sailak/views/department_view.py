@@ -1,18 +1,7 @@
-# from udala.sailak import _
 from Products.Five.browser import BrowserView
-from zope.interface import implementer
-from zope.interface import Interface
 
 
-# from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
-
-class ISailaView(Interface):
-    """Marker Interface for ISailaView"""
-
-
-@implementer(ISailaView)
-class SailaView(BrowserView):
+class DepartmentView(BrowserView):
     # If you want to define a template here, please remove the template from
     # the configure.zcml registration of this view.
     # template = ViewPageTemplateFile('saila_view.pt')
@@ -24,7 +13,7 @@ class SailaView(BrowserView):
             sectiontitle = ""
         return sectiontitle or title
 
-    def saila_data(self):
+    def department_data(self):
         saila_dict = {}
 
         if self.context.bannerimage:

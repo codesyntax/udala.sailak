@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
         meta_type="Dexterity FTI"
-        name="Saila"
+        name="Department"
         i18n:domain="udala.sailak"
 >
 
   <!-- Basic properties -->
   <property name="title"
             i18n:translate=""
-  >Saila</property>
+  >Department</property>
   <property name="description"
             i18n:translate=""
   />
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Saila</property>
+  <property name="factory">Department</property>
   <property name="icon_expr">string:contenttype/document</property>
   <property name="link_target" />
 
@@ -28,11 +28,11 @@
   -->
   </property>
   <!-- Schema, class and security -->
-  <property name="add_permission">udala.sailak.AddSaila</property>
-  <property name="klass">udala.sailak.content.saila.Saila</property>
+  <property name="add_permission">udala.sailak.AddDepartment</property>
+  <property name="klass">udala.sailak.content.department.Department</property>
   <property name="model_file" />
   <property name="model_source" />
-  <property name="schema">udala.sailak.content.saila.ISaila</property>
+  <property name="schema">udala.sailak.content.department.IDepartment</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors"
@@ -64,7 +64,7 @@
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++Saila</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Department</property>
   <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>

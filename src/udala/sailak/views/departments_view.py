@@ -1,5 +1,5 @@
 from Products.Five.browser import BrowserView
 
 
-class SailakView(BrowserView):
+class DepartmentsView(BrowserView):
     pass

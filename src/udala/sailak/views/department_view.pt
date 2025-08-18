@@ -13,13 +13,13 @@
     <metal:content-core fill-slot="main">
       <main id="replace-content"
             tal:define="
-              saila_data view/saila_data;
+              department_data view/department_data;
             "
       >
 
         <div id="section-title"
              tal:attributes="
-               style string:background-image: url(${saila_data/bannerimage});
+               style string:background-image: url(${department_data/bannerimage});
              "
         >
           <h1 class="documentFirstHeading"

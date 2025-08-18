@@ -9,10 +9,10 @@
   <include package="plone.app.contentmenu" />
 
   <browser:page
-      name="sailak_view"
+      name="departments_view"
       for="plone.app.contenttypes.interfaces.IFolder"
-      class=".sailak_view.SailakView"
-      template="sailak_view.pt"
+      class=".department_view.DepartmentsView"
+      template="department_view.pt"
       permission="zope2.View"
       layer="udala.sailak.interfaces.IBrowserLayer"
       menu="plone_displayviews"
@@ -22,9 +22,9 @@
 
   <browser:page
       name="view"
-      for="udala.sailak.content.saila.ISaila"
-      class=".saila_view.SailaView"
-      template="saila_view.pt"
+      for="udala.sailak.content.department.IDepartment"
+      class=".department_view.DepartmentView"
+      template="department_view.pt"
       permission="zope2.View"
       layer="udala.sailak.interfaces.IBrowserLayer"
       />

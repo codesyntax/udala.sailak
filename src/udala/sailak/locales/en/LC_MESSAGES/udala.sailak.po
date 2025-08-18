@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-08-18 07:11+0000\n"
+"POT-Creation-Date: 2025-08-18 07:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,11 +14,15 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: udala.sailak\n"
 
-#: udala/sailak/content/saila.py:34
+#: udala/sailak/content/department.py:32
 msgid "Banner-like image of the Department home"
 msgstr ""
 
-#: udala/sailak/content/saila.py:39
+#: udala/sailak/profiles/default/types/Department.xml
+msgid "Department"
+msgstr ""
+
+#: udala/sailak/content/department.py:37
 msgid "Department icon (only used in the department listing)"
 msgstr ""
 
@@ -26,32 +30,32 @@ msgstr ""
 msgid "Departments view"
 msgstr ""
 
-#: udala/sailak/content/saila.py:82
+#: udala/sailak/content/department.py:83
 msgid "Extra information"
 msgstr ""
 
-#: udala/sailak/content/saila.py:83
+#: udala/sailak/content/department.py:84
 msgid "Field to add arbitrary extra information. Ex.: responsible name, telephone number, email, ..."
 msgstr ""
 
-#: udala/sailak/content/saila.py:45
+#: udala/sailak/content/department.py:43
 msgid "Fill this in if you want to have a different title in the department listing (the title) and here (this one)"
 msgstr ""
 
-#: udala/sailak/content/saila.py:54
-#: udala/sailak/views/saila_view.pt:58
+#: udala/sailak/content/department.py:55
+#: udala/sailak/views/department_view.pt:58
 msgid "Hours"
 msgstr ""
 
-#: udala/sailak/content/saila.py:17
+#: udala/sailak/content/department.py:15
 msgid "Name of social network"
 msgstr ""
 
-#: udala/sailak/content/saila.py:23
+#: udala/sailak/content/department.py:21
 msgid "Name of the field"
 msgstr ""
 
-#: udala/sailak/content/saila.py:44
+#: udala/sailak/content/department.py:42
 msgid "Official name of the department"
 msgstr ""
 
@@ -59,27 +63,23 @@ msgstr ""
 msgid "Package to configure a new udala.sailak site"
 msgstr ""
 
-#: udala/sailak/content/saila.py:19
+#: udala/sailak/content/department.py:17
 msgid "Plone icon name to be applied to this item"
 msgstr ""
 
-#: udala/sailak/profiles/default/types/Saila.xml
-msgid "Saila"
-msgstr ""
-
-#: udala/sailak/content/saila.py:59
+#: udala/sailak/content/department.py:60
 msgid "Social network link"
 msgstr ""
 
-#: udala/sailak/content/saila.py:58
+#: udala/sailak/content/department.py:59
 msgid "Social network links"
 msgstr ""
 
-#: udala/sailak/content/saila.py:50
+#: udala/sailak/content/department.py:51
 msgid "Subtitle that will be shown below the department name"
 msgstr ""
 
-#: udala/sailak/content/saila.py:18
+#: udala/sailak/content/department.py:16
 msgid "URL of social network"
 msgstr ""
 
@@ -87,7 +87,7 @@ msgstr ""
 msgid "Uninstall udala.sailak setup."
 msgstr ""
 
-#: udala/sailak/content/saila.py:24
+#: udala/sailak/content/department.py:22
 msgid "Value of the field"
 msgstr ""
 

@@ -6,7 +6,7 @@
 
   <!-- -*- extra stuff goes here -*- -->
   <permission
-      id="udala.sailak.AddSaila"
-      title="udala.sailak: Add Saila"
+      id="udala.sailak.AddDepartment"
+      title="udala.sailak: Add Department"
       />
 </configure>
