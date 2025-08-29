@@ -1,7 +1,6 @@
-from plone.app.multilingual.dx.interfaces import ILanguageIndependentField
-from zope.interface import alsoProvides
 from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield.registry import DictRow
+from plone.app.multilingual.dx.interfaces import ILanguageIndependentField
 from plone.app.textfield import RichText
 from plone.autoform.directives import widget
 from plone.dexterity.content import Container
@@ -9,6 +8,7 @@ from plone.namedfile import field as namedfile
 from plone.supermodel import model
 from udala.sailak import _
 from zope import schema
+from zope.interface import alsoProvides
 from zope.interface import implementer
 from zope.interface import Interface
 
@@ -99,6 +99,7 @@ class IDepartment(model.Schema):
         ],
         required=False,
     )
+
 
 alsoProvides(IDepartment["bannerimage"], ILanguageIndependentField)
 alsoProvides(IDepartment["sailaicon"], ILanguageIndependentField)
