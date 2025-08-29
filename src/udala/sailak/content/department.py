@@ -1,3 +1,5 @@
+from plone.app.multilingual.dx.interfaces import ILanguageIndependentField
+from zope.interface import alsoProvides
 from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield.registry import DictRow
 from plone.app.textfield import RichText
@@ -97,6 +99,10 @@ class IDepartment(model.Schema):
         ],
         required=False,
     )
+
+alsoProvides(IDepartment["bannerimage"], ILanguageIndependentField)
+alsoProvides(IDepartment["sailaicon"], ILanguageIndependentField)
+alsoProvides(IDepartment["sociallinks"], ILanguageIndependentField)
 
 
 @implementer(IDepartment)
