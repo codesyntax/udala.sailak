@@ -11,7 +11,7 @@ from zope import schema
 from zope.interface import alsoProvides
 from zope.interface import implementer
 from zope.interface import Interface
-
+from plone.app.dexterity import textindexer
 
 class ISocialLinkRowSchema(Interface):
     name = schema.TextLine(title=_("Name of social network"))
@@ -40,6 +40,7 @@ class IDepartment(model.Schema):
         required=False,
     )
 
+    textindexer.searchable("sectiontitle")
     sectiontitle = schema.TextLine(
         title=_("Official name of the department"),
         description=_(
@@ -49,11 +50,13 @@ class IDepartment(model.Schema):
         required=False,
     )
 
+    textindexer.searchable("sectionsubtitle")
     sectionsubtitle = schema.TextLine(
         title=_("Subtitle that will be shown below the department name"),
         required=False,
     )
 
+    textindexer.searchable("meeting_agenda")
     hours = RichText(title=_("Opening hours"), required=False)
 
     widget(sociallinks=DataGridFieldFactory)
