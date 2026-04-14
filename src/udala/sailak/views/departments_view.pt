@@ -1,57 +1,41 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
-      xmlns:tal="http://xml.zope.org/namespaces/tal"
-      metal:use-macro="context/main_template/macros/master"
-      i18n:domain="udala.sailak"
->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:metal="http://xml.zope.org/namespaces/metal" xmlns:tal="http://xml.zope.org/namespaces/tal"
+  metal:use-macro="context/main_template/macros/master" i18n:domain="udala.sailak">
 
-  <body>
+<body>
 
-    <metal:content-core fill-slot="content-core">
-      <metal:block define-macro="content-core">
+  <metal:content-core fill-slot="content-core">
+    <metal:block define-macro="content-core">
 
-        <div class="row"
-             tal:define="
+      <div class="row" tal:define="
                items context/@@contentlisting;
-             "
-             tal:condition="items"
-        >
-          <div class="col-md-3 col-sm-3 mb-4"
-               tal:repeat="item items"
-          >
-            <div class="iconcard border border-primary p-3 h-100 text-center d-flex flex-column position-relative"
-                 tal:define="
+             " tal:condition="items">
+        <div class="col-md-3 col-sm-3 mb-4" tal:repeat="item items">
+          <div class="card border border-primary p-3 h-100 text-center d-flex flex-column align-items-center"
+            tal:define="
                    department python:item.getObject();
-                 "
-            >
-              <h2 class="mb-auto h5">
-                <a class="stretched-link"
-                   tal:content="department/Title"
-                   tal:attributes="
+                 ">
+            <h2 class="mb-3 h5">
+              <a class="stretched-link no-underline" tal:content="department/Title" tal:attributes="
                      href department/absolute_url;
-                   "
-                ></a>
-              </h2>
-              <img class="rounded-circle mx-auto my-2 bg-primary"
-                   tal:define="
+                   "></a>
+            </h2>
+            <img class="mx-auto my-2" tal:define="
                      scale nocall:department/@@images;
-                   "
-                   tal:condition="nocall:department/image"
-                   tal:replace="structure python:scale.srcset(
+                   " tal:condition="nocall:department/sailaicon" tal:replace="structure python:scale.srcset(
                   fieldname='sailaicon',
                   sizes='',
-                  css_class='rounded-circle mx-auto my-2 bg-primary',
+                  css_class='my-2',
                   alt=department.Title(),
                   title=department.Title(),
-                )"
-              />
-            </div>
+                  scale_in_src='thumb',
+                )" />
           </div>
         </div>
+      </div>
 
-      </metal:block>
-    </metal:content-core>
-  </body>
+    </metal:block>
+  </metal:content-core>
+</body>
 
 </html>

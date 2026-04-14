@@ -1,128 +1,95 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
-      xmlns:tal="http://xml.zope.org/namespaces/tal"
-      metal:use-macro="context/main_template/macros/master"
-      i18n:domain="udala.sailak"
->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  xmlns:metal="http://xml.zope.org/namespaces/metal" xmlns:tal="http://xml.zope.org/namespaces/tal"
+  metal:use-macro="context/main_template/macros/master" i18n:domain="udala.sailak">
 
-  <body>
+<body>
 
 
 
-    <metal:content-core fill-slot="main">
-      <main id="replace-content"
-            tal:define="
+  <metal:content-core fill-slot="main">
+    <main id="replace-content" tal:define="
               department_data view/department_data;
-            "
-      >
+            ">
 
-        <div id="section-title"
-             tal:attributes="
+      <div id="section-title" tal:attributes="
                style string:background-image: url(${department_data/bannerimage});
-             "
-        >
-          <h1 class="documentFirstHeading"
-              tal:content="view/title"
-          ></h1>
+             ">
+        <h1 class="documentFirstHeading" tal:content="view/title"></h1>
 
-        </div>
+      </div>
 
-        <div class="row">
-          <div class="col-md-7 col-sm-6">
+      <div class="row">
+        <div class="col-md-7 col-sm-6">
 
 
-            <div class="documentDescription description"
-                 tal:content="context/Description"
-            >
-            </div>
+          <div class="documentDescription description" tal:content="context/Description">
+          </div>
 
-            <div id="parent-fieldname-text"
-                 tal:define="
+          <div id="parent-fieldname-text" tal:define="
                    toc context/table_of_contents|nothing;
-                 "
-                 tal:condition="context/text"
-                 tal:content="structure python:context.text.output_relative_to(view.context)"
-                 tal:attributes="
+                 " tal:condition="context/text"
+            tal:content="structure python:context.text.output_relative_to(view.context)" tal:attributes="
                    class python: toc and 'pat-autotoc' or '';
-                 "
-            >
-            </div>
+                 ">
+          </div>
 
-            <div id="hours"
-                 tal:define="
+          <div id="hours" tal:define="
                    toc context/table_of_contents|nothing;
-                 "
-                 tal:condition="context/hours"
-            >
-              <h2 i18n:translate="">Opening hours</h2>
-              <div id="parent-fieldname-text-hours"
-                   tal:content="structure python:context.hours.output_relative_to(view.context)"
-                   tal:attributes="
+                 " tal:condition="context/hours">
+            <h2 i18n:translate="">Opening hours</h2>
+            <div id="parent-fieldname-text-hours"
+              tal:content="structure python:context.hours.output_relative_to(view.context)" tal:attributes="
                      class python: toc and 'pat-autotoc' or '';
-                   "
-              >
-              </div>
+                   ">
             </div>
           </div>
-          <div class="col-md-5 col-sm-6">
+        </div>
+        <div class="col-md-5 col-sm-6">
+          <div class="extra-data-container pt-4 pb-2 px-4 rounded mb-3">
             <div id="extradata">
               <ul>
                 <li tal:repeat="link context/extradata">
                   <strong tal:content="link/name">Name</strong>
-                  <span class="value"
-                        tal:content="link/value"
-                  >Value</span>
+                  <span class="value" tal:content="link/value">Value</span>
                 </li>
               </ul>
             </div>
 
-            <div id="sociallinks"
-                 tal:define="
-                   sociallinks context/sociallinks;
-                 "
-                 tal:condition="sociallinks"
-            >
-              <ul class="social-network list-inline mt-3 ms-3"
-                  tal:define="
-                    sociallinks context/sociallinks;
-                  "
-                  tal:condition="sociallinks"
-              >
-                <li class="list-inline-item"
-                    tal:repeat="sociallink sociallinks"
-                ><a class="rounded-circle p-3"
-                     title="Facebook"
-                     tal:attributes="
-                       href sociallink/url;
-                       title sociallink/name;
-                     "
-                  >
+
+          </div>
+
+          <div class="sailaImageContainer">
+            <img class="rounded mb-3" tal:define="
+                     scale nocall:context/@@images;
+                   " tal:replace="structure python:scale.srcset(
+                   fieldname='image',
+                   sizes='(min-width: 350px) 400px,100vw',
+                   css_class='rounded mb-3',
+                   title=view.title(),
+                   alt=view.title()
+                   )" />
+            <div class="d-flex justify-content-end" id="sociallinks" tal:define="
+                               sociallinks context/sociallinks;
+                             " tal:condition="sociallinks">
+              <ul class="social-network list-inline mt-3 ms-3" tal:define="
+                                sociallinks context/sociallinks;
+                              " tal:condition="sociallinks">
+                <li class="list-inline-item" tal:repeat="sociallink sociallinks"><a class="rounded-circle p-1"
+                    title="Facebook" tal:attributes="
+                                   href sociallink/url;
+                                   title sociallink/name;
+                                 ">
                     <tal:icon tal:replace="structure python:icons.tag(sociallink['iconname'])" />
                   </a>
                 </li>
               </ul>
             </div>
-
-            <div class="sailaImageContainer">
-              <img class="border border-6 mb-3"
-                   tal:define="
-                     scale nocall:context/@@images;
-                   "
-                   tal:replace="structure python:scale.srcset(
-                   fieldname='image',
-                   sizes='(min-width: 350px) 400px,100vw',
-                   css_class='border border-6 mb-3',
-                   title=view.title(),
-                   alt=view.title()
-                   )"
-              />
-            </div>
           </div>
         </div>
+      </div>
 
-      </main>
-    </metal:content-core>
-  </body>
+    </main>
+  </metal:content-core>
+</body>
 
 </html>
