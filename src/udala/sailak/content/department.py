@@ -1,5 +1,6 @@
 from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield.registry import DictRow
+from plone.app.dexterity import textindexer
 from plone.app.multilingual.dx.interfaces import ILanguageIndependentField
 from plone.app.textfield import RichText
 from plone.autoform.directives import widget
@@ -11,7 +12,7 @@ from zope import schema
 from zope.interface import alsoProvides
 from zope.interface import implementer
 from zope.interface import Interface
-from plone.app.dexterity import textindexer
+
 
 class ISocialLinkRowSchema(Interface):
     name = schema.TextLine(title=_("Name of social network"))
