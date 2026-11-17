@@ -18,6 +18,8 @@
 
   <include package=".views" />
 
+  <adapter factory=".content.datagrid.KeepEmptyDataGridFieldConverter" />
+
   <!-- -*- extra stuff goes here -*- -->
 
 </configure>

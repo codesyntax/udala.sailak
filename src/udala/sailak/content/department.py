@@ -1,4 +1,3 @@
-from collective.z3cform.datagridfield.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield.registry import DictRow
 from plone.app.dexterity import textindexer
 from plone.app.multilingual.dx.interfaces import ILanguageIndependentField
@@ -8,6 +7,7 @@ from plone.dexterity.content import Container
 from plone.namedfile import field as namedfile
 from plone.supermodel import model
 from udala.sailak import _
+from udala.sailak.content.datagrid import KeepEmptyDataGridFieldFactory
 from zope import schema
 from zope.interface import alsoProvides
 from zope.interface import implementer
@@ -60,7 +60,7 @@ class IDepartment(model.Schema):
     textindexer.searchable("meeting_agenda")
     hours = RichText(title=_("Opening hours"), required=False)
 
-    widget(sociallinks=DataGridFieldFactory)
+    widget(sociallinks=KeepEmptyDataGridFieldFactory)
     sociallinks = schema.List(
         title=_("Social network links"),
         value_type=DictRow(title=_("Social network link"), schema=ISocialLinkRowSchema),
@@ -84,7 +84,7 @@ class IDepartment(model.Schema):
         required=False,
     )
 
-    widget(extradata=DataGridFieldFactory)
+    widget(extradata=KeepEmptyDataGridFieldFactory)
     extradata = schema.List(
         title=_("Extra information"),
         description=_(
